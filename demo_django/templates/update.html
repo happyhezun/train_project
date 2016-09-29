@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src='/static/jquery.js'></script>
+</head>	
+<body>
+	<form method='get' action="/auth/">
+		<input type="text"  name="username" />
+		<input type="password" name="password" />
+		<input type="submit" value="submit">
+	<form>
+	
+	
+	<div>
+		<ul id='region_list'>
+			<li>show below</li>
+	
+	</div>
+	<script>
+		$(function(){
+			$.get('/getRegion/',{val:'anhui'}, function(region){
+				
+				var region = JSON.parse(region);
+				console.log(region);
+				console.log(region.ShanDong);
+				$.each(region.ShanDong.Jinnan, function(key,county){
+				
+					row = "<li>" + key + '&nbsp' + county + "</li>"
+					$("#region_list").append(row)
+				
+				})
+				
+			});
+		
+		});
+	
+	</script>
+	
+</body>
+
+</html>
