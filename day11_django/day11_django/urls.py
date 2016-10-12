@@ -1,13 +1,12 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from app01 import views
+# from app01 import views
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'day11_django.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+urlpatterns = patterns('app01.views',
 
-    url(r'^admin/', include(admin.site.urls)),
-    (r'^userlist/', views.List),
-    
+    url(r'^views1/', 'index'),
+)
+urlpatterns += patterns('app02.views',
+
+    url(r'^views2/', 'index'),
 )
