@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>Search page</title>
+	</head>
+	<body>
+		<h1>Search page</h1>
+		<form action='/web01/search' method='get'>
+			<input type='text' name='q'>
+			<input type="submit" value=Search>
+
+		</form>
+		
+		{% for user in users %}
+			<h1>姓名：{{ user.UserName }}</h1>
+			<h1>年齡：{{ user.Age }}</h1><br/>
+		{%endfor%}
+	</body>
+
+</html>

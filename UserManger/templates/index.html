@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>index page</title>
+	</head>
+	<body>
+		<h1>index page</h1>
+		<a href="/web01/search_form">查詢</a>
+		<a href="/web01/">不排序</a>  <a href="/web01/list_sort/Age">年齡升序</a> <a href="/web01/list_sort/-Age">年齡降序</a>
+		<a href="/web01/list_sort/UserName">姓名排序</a> 
+		<div>
+			<div>用戶名 年齡</div>
+			{% for user in users%}
+				<div>{{ user.UserName }}  {{ user.Age }} <a href="">修改</a> <a href="">刪除</a></div>	
+			{% endfor %}
+		</div>
+		{% if info %}
+			<h1>{{ info }} create successful</h1>
+		{% endif %}
+	</body>
+
+</html>
